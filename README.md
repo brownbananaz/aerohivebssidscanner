@@ -73,10 +73,19 @@ The application extracts the following information for each access point:
 ## Technical Details
 
 - Connects to access points via SSH using paramiko
-- Queries multiple WiFi interfaces: wifi0.1-wifi0.4 and wifi1.1-wifi1.4
+- Queries multiple WiFi interfaces: wifi0.1-wifi0.5, wifi1.1-wifi1.5, and wifi2.1-wifi2.5
 - Uses regex parsing to extract MAC addresses and SSID information
 - Multi-threaded operation to prevent GUI freezing during extraction
 - Automatic CSV export with timestamp formatting
+
+## Interface Limitations
+
+**Supported Interfaces**: The tool currently supports up to 5 SSIDs per radio band:
+- **Radio 0**: wifi0.1, wifi0.2, wifi0.3, wifi0.4, wifi0.5
+- **Radio 1**: wifi1.1, wifi1.2, wifi1.3, wifi1.4, wifi1.5  
+- **Radio 2**: wifi2.1, wifi2.2, wifi2.3, wifi2.4, wifi2.5
+
+**Note**: Only active interfaces with configured SSIDs will appear in the results. Unused interface slots on APs with fewer than 5 SSIDs per radio will be automatically filtered out of the report.
 
 ## Security Notes
 
