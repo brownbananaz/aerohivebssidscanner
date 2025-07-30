@@ -1,4 +1,4 @@
-# Aerohive AP Information Extractor
+# Aerohive AP BSSID Extractor
 
 A Python GUI application for extracting BSSID, SSID, and hostname information from Aerohive access points via SSH.
 
