@@ -1,4 +1,4 @@
-# Aerohive AP BSSID Extractor
+# Aerohive AP Information Extractor
 
 A Python GUI application for extracting BSSID, SSID, and hostname information from Aerohive access points via SSH.
 
@@ -13,26 +13,44 @@ A Python GUI application for extracting BSSID, SSID, and hostname information fr
 ## Requirements
 
 - Python 3.x
+- Python venv module (usually included with Python 3.x)
 - paramiko library (for SSH connections)
 
 ## Installation
 
 1. Clone or download this repository
-2. Install dependencies:
+2. Create a virtual environment:
    ```bash
-   pip3 install -r requirements.txt
+   python3 -m venv venv
    ```
+3. Activate the virtual environment:
+   ```bash
+   source venv/bin/activate
+   ```
+4. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+**Dependencies included in requirements.txt:**
+- paramiko>=2.7.0 (for SSH connections)
 
 ## Usage
 
 ### Running the Application
 
-**Option 1: Using the run script**
+**Important**: Make sure your virtual environment is activated before running the application:
+```bash
+source venv/bin/activate
+```
+
+**Option 1: Using the run script (not recommended - see note below)**
 ```bash
 ./run.sh
 ```
+**Note**: The run script attempts to install dependencies globally and may fail on systems with externally managed Python environments.
 
-**Option 2: Direct Python execution**
+**Option 2: Direct Python execution (recommended)**
 ```bash
 python3 aerohive_extractor.py
 ```
